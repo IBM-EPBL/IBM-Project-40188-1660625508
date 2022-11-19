@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ECG Arrhythmia classification using CNN</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link
+      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .intro1 {
+      font-size: 40px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bolder;
+      margin-top: 50px;
+    }
+    .intro {
+      font-style: italic;
+      justify-content: center;
+      font-size: 20px;
+      padding-top: 10px;
+      margin-left: 40px;
+    }
+    .intro2 {
+      font-size: 20px;
+      justify-content: center;
+    }
+
+    .navbar-nav {
+      text-align: right;
+    }
+    ._in {
+      margin-left: 550px;
+    }
+    .para {
+      margin-left: 15px;
+    }
+    .intro3 {
+      font-size: 25px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      margin-top: 50px;
+      margin-left: 45px;
+    }
+  </style>
+  <body style="background-color: #f4c2c2">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand" href="#"
+        >ECG Arrhythmia classification using CNN</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/info">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/types">Types</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predict_base">Predict</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div
+      style="
+        border: #d9534f;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        height: max-content;
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      "
+    >
+      <div class="intro1">
+        <center>Types of Arrhythmia</center>
+      </div>
+      <div class="intro">
+        <p class="para">
+          Arrhythmias are usually categorized based on the speed of heart rate.
+          The six main categories would be-
+        </p>
+        <ol class="_in">
+          <li><strong>Normal</strong></li>
+          <li><strong>Left Bundle Branch Block</strong></li>
+          <li><strong>Right Bundle Branch Block</strong></li>
+          <li><strong>Ventricular Fibrillation</strong></li>
+          <li><strong>Premature Atrial Contraction</strong></li>
+          <li><strong>Premature Ventricular Contractions</strong></li>
+        </ol>
+      </div>
+      <div class="intro3" id="types">
+        <section>1.Left Bundle Branch Block:</section>
+      </div>
+      <div class="intro">
+        <p class="para">
+          A delay or blockage of electrical impulses to the left side of the
+          heart. Left bundle branch block sometimes makes it harder for the
+          heart to pump blood efficiently through the circulatory system. Most
+          people don't have symptoms. If symptoms occur, they include fainting
+          or a slow heart rate. If there's an underlying condition, such as
+          heart disease, that condition needs treatment. In patients with heart
+          failure, a pacemaker can also relieve symptoms as well as prevent
+          death.
+        </p>
+      </div>
+      <div class="intro3" id="types">
+        <section>2.Premature Atrial Contraction:</section>
+      </div>
+      <div class="intro">
+        <p class="para">
+          Premature atrial contractions (PACs) are extra heartbeats that start
+          in the upper chambers of your heart. When the premature, or early,
+          signal tells the heart to contract, there may not be much blood in the
+          heart at that moment. That means there's not much blood to pump out.
+        </p>
+      </div>
+      <div class="intro3" id="types">
+        <section>3.Premature Ventricular Contractions:</section>
+      </div>
+      <div class="intro">
+        <p class="para">
+          Premature ventricular contractions (PVCs) are extra heartbeats that
+          begin in one of the heart's two lower pumping chambers (ventricles).
+          These extra beats disrupt the regular heart rhythm, sometimes causing
+          a sensation of a fluttering or a skipped beat in the chest. In the
+          vast majority of cases, PVCs have no known cause and occur
+          spontaneously. Common known etiologies include excess caffeine
+          consumption, excess catecholamines, high levels of anxiety, and
+          electrolyte abnormalities.
+        </p>
+      </div>
+      <div class="intro3" id="types">
+        <section>4.Right Bundle Branch Block:</section>
+      </div>
+      <div class="intro">
+        <p class="para">
+          Right bundle branch block is a problem with your right bundle branch
+          that keeps your heart’s electrical signal from moving at the same time
+          as the left bundle branch. Instead of moving together on the left and
+          right sides, the signal on the right side is running behind. This
+          creates an irregular heartbeat. Usually, the problem isn’t serious.
+        </p>
+      </div>
+      <div class="intro3" id="types">
+        <section>5.Ventricular Fibrillation:</section>
+      </div>
+      <div class="intro">
+        <p class="para">
+          Ventricular fibrillation is a type of irregular heart rhythm
+          (arrhythmia). During ventricular fibrillation, the lower heart
+          chambers contract in a very rapid and uncoordinated manner. As a
+          result, the heart doesn't pump blood to the rest of the body.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+Footer

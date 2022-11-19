@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ECG Arrhythmia classification using CNN</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" />    
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link
+      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .intro1 {
+      font-size: 40px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bolder;
+      margin-top: 50px;
+    }
+    .intro {
+      font-style: italic;
+      justify-content: center;
+      font-size: 20px;
+      padding-top: 50px;
+      margin-left: 40px;
+    }
+    .intro2 {
+      font-size: 20px;
+      justify-content: center;
+    }
+
+    .navbar-nav {
+      text-align: right;
+    }
+    ._in {
+      margin-left: 550px;
+    }
+    .para {
+      margin-left: 15px;
+    }
+  </style>
+  <body style="background-color: #f4c2c2">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand" href="#"
+        >ECG Arrhythmia classification using CNN</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/info">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/types">Types</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predict_base">Predict</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div
+      style="
+        border: #d9534f;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        height: max-content;
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      "
+    >
+      <div class="intro1">
+        <center>Diagnosis of Arrhythmia</center>
+        <img
+          src="http://cdn.onlinewebfonts.com/svg/img_573539.png"
+          alt=""
+          height="100"
+          width="100"
+          align="right"
+        />
+      </div>
+      <div class="intro">
+        <ol>
+          <li>
+            <strong>Electrocardiograms (ECG):</strong> Can detect electrical
+            activity of the heart.
+          </li>
+          <li>
+            <strong>Echocardiograms:</strong> Uses sound waves to produce images
+            of the heart.
+          </li>
+          <li>
+            <strong>Implantable loop recorder:</strong>It can be implanted under
+            the skin around the heart, to record its status.
+          </li>
+          <li>
+            <strong> recorder:</strong>It’s like a wearable ECG. It is supposed
+            to be alerted when you have symptoms.
+          </li>
+          <li>
+            <strong>Holter Monitor:</strong>It’s another mobile ECG device which
+            is temporarily used to record the activity of the heart.
+          </li>
+        </ol>
+        <p class="para">
+          Other tests that can be used are, Stress test, where you are made to
+          do a physical activity and the activity of your heart is recorded.
+          Tilt-table test is used for fainting cases, where you lie flat on the
+          table while recording your heart status. EP testing and mapping can
+          also be used where tubes with electrode ends are used inside your body
+          to find details.
+        </p>
+      </div>
+      <div class="intro1">
+        <center>
+          <i class="fa-solid fa-syringe"></i>Treatment -Medications
+        </center>
+      </div>
+      <div class="intro">
+        <p class="para">
+          Drugs like blood thinners are recommended by doctors as per the
+          condition of the patient.There are two therapies to treat heart
+          issues---
+        </p>
+        <ol>
+          <li>
+            <strong>Cardioversion:</strong> Shock is delivered to the heart
+            using patches on the chest which coordinates the electrical
+            impulses.
+          </li>
+          <li>
+            <strong>Vagal maneuvers:</strong> Controls the nervous system, which
+            inturn slows down the heart beats. Used for faster heart beat
+            conditions.
+          </li>
+        </ol>
+      </div>
+      <div class="intro1">
+        <center>Surgeries</center>
+      </div>
+      <div class="intro">
+        <ol>
+          <li>
+            <strong>Ablation:</strong> Catheters are used in the blood vessels
+            connected to the heart.
+          </li>
+          <li>
+            <strong>Pacemaker:</strong> It is a tiny device implanted near the
+            collarbone.
+          </li>
+
+          <li>
+            <strong>Maze procedure:</strong> It involves making multiple pattern
+            like incisions of the heart tissue to make it scar tissue which
+            reduces the stray electrical impulses.
+          </li>
+          <li>
+            <strong>ICD:</strong> It is also a device implanted under the skin
+            of the collarbone.
+          </li>
+          <li>
+            <strong>Coronary bypass surgery:</strong> It improves the flow of
+            blood to your heart.
+          </li>
+        </ol>
+      </div>
+      <div class="intro1">
+        <center>Home Remedies</center>
+      </div>
+      <div class="intro">
+        <ol>
+          <li>Eat healthy</li>
+          <li>Do not smoke or drink</li>
+          <li>Exercise regularly, keep your weight in check</li>
+          <li>Keep your blood pressure and cholesterol levels in check</li>
+          <li>
+            Keep proper habits of medication and doctor visits whenever
+            necessary
+          </li>
+          <li>Do Yoga, Meditation, and other Relaxation techniques</li>
+        </ol>
+      </div>
+      <div class="intro1">
+        <center>Precautions</center>
+      </div>
+      <div class="intro">
+        <ol>
+          <li>Have healthy practices</li>
+          <li>Keep note of any symptoms you’re having</li>
+          <li>Be aware of the conditions</li>
+          <li>Have proper doctor visits</li>
+          <li>
+            Make a list of all the medications and family history of Arrhythmias
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
